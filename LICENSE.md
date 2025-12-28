@@ -1,6 +1,7 @@
 MIT License
 
-Copyright (c) 2022 Michael Hansen
+Copyright (c) 2022 Michael Hansen (original Piper project)
+Copyright (c) 2025 Oliver C. Rickard and contributors (piper-swift rewrite)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

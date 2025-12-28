@@ -13,10 +13,33 @@ htmlcov
 /build/
 /local/
 /dist/
-/lib/
 /install/
 /download/
 *.so
 
 .venv/
 lightning_logs/
+
+# Voice/model artifacts (downloaded at runtime)
+*.onnx
+*.onnx.json
+
+# Swift / SwiftPM
+.build/
+.swiftpm/
+Packages/
+Package.resolved
+
+# Xcode
+DerivedData/
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+*.xcuserstate
+*.xcresult
+.sourcekit-lsp/
+.vscode/
+
+# Bench outputs
+bench/*.json
+bench/*.csv
