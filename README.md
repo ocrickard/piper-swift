@@ -45,6 +45,16 @@ All numbers below are **wall-clock `ms_mean`** from the included benchmarks usin
 | 4 | 56 | 167.77 | 31.26 | 125.56 |
 | 8 | 112 | 190.16 | 65.52 | 162.85 |
 
+**Scaling takeaway**: Swift/Metal has **higher fixed overhead** at tiny inputs, but it grows **more slowly** as input length increases (the gap shrinks as phoneme count grows).
+
+Derived from factor=1 → factor=8 (Δphonemes = +98):
+
+| backend | ms_mean @1 | ms_mean @8 | growth (×) | Δms | Δms / Δphoneme |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Swift/Metal | 147.39 | 190.16 | 1.29× | +42.77 | 0.44 |
+| ORT CPU | 11.57 | 65.52 | 5.66× | +53.95 | 0.55 |
+| ORT CoreML\* | 46.70 | 162.85 | 3.49× | +116.15 | 1.19 |
+
 \* **CoreMLExecutionProvider notes**: ORT CoreML prints warnings about zero-length shape tensors and may segfault when run across multiple test vectors. The numbers above were collected with `--max-tests 1`.
 
 ### Benchmark commands
